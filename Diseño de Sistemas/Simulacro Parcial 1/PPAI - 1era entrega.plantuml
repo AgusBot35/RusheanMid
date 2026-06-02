@@ -1,0 +1,12 @@
+@startuml PPAI 1era entrega
+control Gestor
+entity Bolsin
+entity cambioEstado
+entity actualEstado
+entity seleccionadoEstado
+
+Gestor --> Bolsin: sosActual()
+Bolsin --> cambioEstado: sosActual()
+Bolsin --> actualEstado: sosEnviado()
+actualEstado --> seleccionadoEstado: sosEnviado()
+@enduml
