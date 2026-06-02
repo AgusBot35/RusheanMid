@@ -40,7 +40,37 @@ ORDER BY r.rental_date;
 
 */
 
+SELECT 
+	a.first_name AS Nombre,
+	a.last_name AS Apellido
+FROM film f
+JOIN film_category fc
+	ON f.film_id = fc.film_id
+JOIN category c
+	ON c.category_id = fc.category_id
+JOIN film_actor fa
+	ON f.film_id = fa.film_id
+JOIN actor a
+	ON fa.actor_id = a.actor_id
+WHERE UPPER(c.name) = 'COMEDY'
+ORDER BY Nombre
 
+-- Sin repetición:
+
+SELECT DISTINCT
+	a.first_name AS Nombre,
+	a.last_name AS Apellido
+FROM film f
+JOIN film_category fc
+	ON f.film_id = fc.film_id
+JOIN category c
+	ON c.category_id = fc.category_id
+JOIN film_actor fa
+	ON f.film_id = fa.film_id
+JOIN actor a
+	ON fa.actor_id = a.actor_id
+WHERE UPPER(c.name) = 'COMEDY'
+ORDER BY Nombre
 
 /*
 
