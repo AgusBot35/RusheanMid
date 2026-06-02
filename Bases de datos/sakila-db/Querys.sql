@@ -82,6 +82,17 @@ ORDER BY Nombre
 
 -- **Filas esperadas:** 30
 
+*/
+
+SELECT *
+FROM film f
+JOIN film_actor fa
+	ON f.film_id = fa.film_id
+JOIN actor a
+	ON fa.actor_id = a.actor_id
+WHERE UPPER(a.first_name) = 'RAY'
+
+/*
 ---
 
 -- ### 4. Películas de 61 a 99 minutos en Francés
