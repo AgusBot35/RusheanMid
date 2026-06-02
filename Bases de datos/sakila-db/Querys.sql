@@ -101,6 +101,21 @@ WHERE UPPER(a.first_name) = 'RAY'
 
 -- **Filas esperadas:** 9
 
+*/
+
+SELECT DISTINCT
+	f.title as pelicula
+FROM film f
+JOIN film_actor fa
+	ON f.film_id = fa.film_id
+JOIN actor a
+	ON fa.actor_id = a.actor_id
+JOIN language l
+	ON f.original_language_id = l.language_id
+WHERE f.length >= 61 AND  f.length <= 99 AND upper(l.name) = 'FRENCH'
+
+/*
+
 ---
 
 -- ### 5. Ciudades de Austria, Chile y France
